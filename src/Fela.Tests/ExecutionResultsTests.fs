@@ -1,4 +1,4 @@
-module Tests
+module ExecutionResultTests
 
 open System
 open Fela.Common

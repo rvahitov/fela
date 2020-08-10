@@ -3,6 +3,12 @@
 open System
 open System.Runtime.CompilerServices
 
+module Assert =
+    let inline stringNotEmpty (argName : string) s =
+        if System.String.IsNullOrEmpty s
+        then raise (System.ArgumentException("Value should not be null or empty", argName))
+        else ()
+
 type IExecutionResult =
     abstract IsSuccess : bool
     abstract Errors : exn []
